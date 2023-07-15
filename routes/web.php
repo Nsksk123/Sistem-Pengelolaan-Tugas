@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\GroupTaskController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,10 +28,10 @@ Route::controller(AuthenticationController::class)->group(function(){
 
 Route::middleware('auth')->group(function(){
 
-    Route::controller(TaskController::class)->group(function(){
-        Route::get('tugas', 'index');
-        Route::resource('tugas', TaskController::class);
-    });
+
+    Route::resource('tugas', TaskController::class);
+
+    Route::resource('tugas-kelompok', GroupTaskController::class);
     Route::get('/dashboard', function(){
         return view('Dashboard.dashboard');
     });

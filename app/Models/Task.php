@@ -11,6 +11,15 @@ class Task extends Model
 
     protected $fillable=[
         'title',
-        'description'
+        'description',
+        'type',
     ];
+
+
+
+    public function users(){
+
+        return $this->belongsToMany(User::class, 'assignments', 'task_id', 'user_id');
+
+    }
 }

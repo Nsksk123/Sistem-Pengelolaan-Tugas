@@ -11,7 +11,7 @@ class TaskController extends Controller
 
     public function index(){
 
-        $tasks = Task::all();
+        $tasks = Task::where('type', 'personal')->latest()->get();
         return view('Dashboard.Task.task', [
             'tasks' => $tasks,
         ]);

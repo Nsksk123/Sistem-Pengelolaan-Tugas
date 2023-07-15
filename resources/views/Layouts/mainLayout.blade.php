@@ -21,7 +21,7 @@
                 <a class="nav-link" href="/tugas">Tugas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Tugas Kelompok</a>
+                <a class="nav-link" href="/tugas-kelompok">Tugas Kelompok</a>
               </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">Murid</a>
