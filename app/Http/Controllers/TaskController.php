@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -26,8 +27,12 @@ class TaskController extends Controller
     public function show($tuga){
 
         $task = Task::findOrFail($tuga);
+        $days = Carbon::parse($task->created_at);
+        $day = $days->format('d M Y');
+        // dd($day);
         return view('Dashboard.Task.detail-task', [
             'task' => $task,
+            'day' => $day,
         ]);
     }
 
@@ -46,8 +51,20 @@ class TaskController extends Controller
     public function edit($tuga){
 
         $task = Task::findOrFail($tuga);
-        dd($task);
+        // dd($task);
+        return view('Dashboard.Task.edit-task', [
+            'task' => $task,
+        ]);
 
+    }
+
+    public function update(Request $request, $tuga){
+
+        $task = Task::findOrFail($tuga);
+
+        $task->update($request->all());
+
+        return redirect('/tugas');
     }
 
 }
