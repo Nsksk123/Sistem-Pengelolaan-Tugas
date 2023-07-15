@@ -21,7 +21,31 @@
             </p></li>
             <li class="list-group-item">
                 <a class="d-inline btn btn-success" href="/tugas/{{ $task->id }}/edit">Edit</a>
-                <a class="d-inline btn btn-danger" href="">Hapus</a>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Hapus
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            Yakin ingin menghapus data ini?
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ route('tugas.destroy', $task->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-primary">Yakin</button>
+                                <a href="{{ route('tugas.index') }}" class="btn btn-secondary">Kembali</a>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
             </li>
         </ul>
         @endforeach

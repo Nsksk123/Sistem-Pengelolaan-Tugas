@@ -9,6 +9,7 @@
         <div class="p-5 h-100 shadow-lg mt-5 col-3"><a class="nav-link" href="">Tugas Kelompok</a></div>
         <div class="p-5 h-100 shadow-lg mt-5 col-3"><a class="nav-link" href="">Murid</a></div>
     </div>
+    {{-- {{ Auth::user() }} --}}
 
 @endsection
 

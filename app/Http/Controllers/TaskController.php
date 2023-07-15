@@ -67,4 +67,14 @@ class TaskController extends Controller
         return redirect('/tugas');
     }
 
+    public function destroy($tuga){
+
+        $deletedTask = Task::findOrFail($tuga);
+
+        $deletedTask->delete();
+
+        return redirect('/tugas');
+
+    }
+
 }

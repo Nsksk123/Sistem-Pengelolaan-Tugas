@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::controller(AuthenticationController::class)->group(function(){
     Route::get('login', 'index')->name('login')->middleware('guest');
     Route::post('login', 'authenticate');
+    Route::get('logout', 'logout');
 });
 
 Route::middleware('auth')->group(function(){
