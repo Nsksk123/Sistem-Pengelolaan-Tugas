@@ -11,14 +11,14 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="tugas">Navbar</a>
+          <a class="navbar-brand" href="#">Navbar</a>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Tugas</a>
+                <a class="nav-link" href="/tugas">Tugas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Tugas Kelompok</a>
@@ -31,7 +31,7 @@
         </div>
       </nav>
 
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center container mt-5">
         @yield('dashboard')
       </div>
 

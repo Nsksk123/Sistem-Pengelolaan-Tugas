@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,10 +26,10 @@ Route::controller(AuthenticationController::class)->group(function(){
 
 Route::middleware('auth')->group(function(){
 
-    // Route::controller(AuthenticationController::class)->group(function(){
-    //     Route::get('login', 'index')->name('login')->middleware('guest');
-    //     Route::post('login', 'authenticate');
-    // });
+    Route::controller(TaskController::class)->group(function(){
+        Route::get('tugas', 'index');
+        Route::resource('tugas', TaskController::class);
+    });
     Route::get('/dashboard', function(){
         return view('Dashboard.dashboard');
     });
