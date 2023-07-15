@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<h1>hai</h1>
-</body>
-</html>
+@extends('Layouts.mainLayout')
+
+@section('title','')
+
+@section('dashboard')
+
+    <div class="row w-100 container d-flex justify-content-between">
+        <div class="p-5 h-100 shadow-lg mt-5 col-3"><a class="nav-link" href="/tugas">Tugas</a></div>
+        <div class="p-5 h-100 shadow-lg mt-5 col-3"><a class="nav-link" href="">Tugas Kelompok</a></div>
+        <div class="p-5 h-100 shadow-lg mt-5 col-3"><a class="nav-link" href="">Murid</a></div>
+    </div>
+
+@endsection
+

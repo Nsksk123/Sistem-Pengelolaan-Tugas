@@ -4,14 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
+    <title>Dashboard @yield('title')</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
 
-    <div class="container d-flex justify-content-center align-items-center vh-100">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="tugas">Navbar</a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tugas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tugas Kelompok</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Murid</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="d-flex justify-content-center">
         @yield('dashboard')
-    </div>
+      </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
